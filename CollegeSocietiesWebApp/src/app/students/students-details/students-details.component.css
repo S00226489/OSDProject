@@ -1,0 +1,53 @@
+/* Styles for the Student Form Container */
+div[ngIf="showForm"] {
+    margin: 20px;
+  }
+  
+  /* Styles for the Mat Card */
+  mat-card {
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  }
+  
+  mat-card-header {
+    background-color: #e0e0e0; /* Light grey background for header */
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  mat-card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  mat-card-subtitle {
+    font-size: 16px;
+    color: #757575; /* Dark grey for subtitle */
+  }
+  
+  mat-card-content p {
+    margin: 10px 0;
+    color: #333; /* Darker text for content */
+  }
+  
+  /* Styles for Card Actions and Buttons */
+  mat-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px 0;
+  }
+  
+  mat-card-actions button, mat-card-actions a {
+    margin-right: 10px;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    color: #f44336; /* Red color for error messages */
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #f44336;
+    border-radius: 4px;
+  }
+  

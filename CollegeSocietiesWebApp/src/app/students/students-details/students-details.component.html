@@ -1,0 +1,29 @@
+<div *ngIf="showForm">
+    <app-student-form [student]="student"></app-student-form> 
+  </div>
+  
+  <div *ngIf="student && !showForm; else showError">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ student.name }}</mat-card-title>
+        <mat-card-subtitle>{{ student.email }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Student Number: {{ student.studentNumber }}</p> 
+        <p>Email: {{ student.email }}</p>
+        <mat-card-actions>
+          <button mat-button color="warn" (click)="deleteStudent()">Delete Student</button> 
+          <button mat-raised-button color="primary" (click)="editStudent()">Edit</button>
+          <div class="button-container">
+            
+            <a mat-raised-button routerLink="/students">Back</a>
+          </div>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <ng-template #showError>
+    <div *ngIf="message" class="error-message">{{ message }}</div>
+  </ng-template>
+  

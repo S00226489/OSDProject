@@ -1,0 +1,51 @@
+{{message}}
+
+<div *ngIf="student">{{student.name}}</div>
+
+<mat-card>
+  <mat-card-header>
+    <h1 *ngIf="!student">Add a Student</h1>
+    <h1 *ngIf="student">Edit a Student</h1>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+      <!-- Name Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Student Name</mat-label>
+        <input matInput placeholder="John Doe" formControlName="name">
+        <mat-icon matSuffix>face</mat-icon>
+        <mat-error *ngIf="studentForm.hasError('minlength', 'name')">
+          Name must be at least 3 characters long
+        </mat-error>
+        <mat-error *ngIf="!studentForm.value.name">Name is required</mat-error>
+      </mat-form-field>
+
+      <!-- Student Number Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Student Number</mat-label>
+        <input matInput placeholder="SS1234567" formControlName="studentNumber">
+        <mat-icon matSuffix>school</mat-icon>
+        <mat-error>Student Number is required</mat-error>
+      </mat-form-field>
+
+      <!-- Email Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="example@student.com" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="!studentForm.value.email">Email is required</mat-error>
+        <mat-error *ngIf="studentForm.hasError('email', 'email')">Must be a valid email</mat-error>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <div class="button-container">
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <a mat-raised-button routerLink="/students">Cancel</a>
+      </div>
+
+
+    </form>
+  </mat-card-content>
+</mat-card>

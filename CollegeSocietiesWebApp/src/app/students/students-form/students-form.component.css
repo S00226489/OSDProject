@@ -1,0 +1,54 @@
+/* Styles for the Student Form Container */
+div[ngIf="showForm"] {
+  margin: 20px;
+}
+
+/* Styles for the Mat Card */
+mat-card {
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Mat Card Header with Blue Background */
+mat-card-header {
+  background-color: #1976d2; /* Blue background to match the toolbar */
+  color: white; /* White text for contrast */
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  color: white; /* White text for readability */
+}
+
+mat-card-content p {
+  margin: 10px 0;
+  color: #333; /* Darker text for content */
+}
+
+/* Black Button Styling inside Mat Card Content */
+.mat-card-content .button-container button,
+.mat-card-content .button-container a {
+  background-color: #000; /* Black background for buttons */
+  color: #fff; /* White text for contrast */
+  margin-right: 10px;
+}
+
+/* Hover Effect for Black Buttons inside Mat Card Content */
+.mat-card-content .button-container button:hover,
+.mat-card-content .button-container a:hover {
+  background-color: #333; /* Darker shade for hover state */
+}
+
+/* Styles for Form Fields and Error Messages */
+/* You can add your form field styles and error message styles here */
+
+/* Error Message Styling */
+.error-message {
+  color: #f44336; /* Red color for error messages */
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #f44336;
+  border-radius: 4px;
+}

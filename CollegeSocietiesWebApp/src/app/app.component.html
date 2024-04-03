@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" (click)="navigateToHome()">
+  2023 Client Application for Assignment
+</mat-toolbar>
+
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOutContent">
+  <ng-container *ngIf="auth.user$ | async as user">
+    <!-- Display User Profile only on Homepage -->
+    <ng-container *ngIf="isHomepage()">
+      <mat-toolbar color="accent">
+        User Profile
+      </mat-toolbar>
+      <ul>
+        <li><img src="{{ user.picture }}"></li>
+        <li>{{ user.name }}</li>
+        <li>{{ user.email }}</li>
+      </ul>
+
+      <div class="button-container">
+        <button (click)="auth.logout({ logoutParams: { returnTo: document.location.origin } })">
+          Log out
+        </button>
+        
+        <button mat-raised-button (click)="navigateToStudents()">
+          Show Student List
+        </button>
+      </div>
+
+     
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #loggedOutContent>
+  <div class="login-container">
+    <button (click)="auth.loginWithRedirect()">Log in</button>
+  </div>
+</ng-template>
+
+<router-outlet></router-outlet>

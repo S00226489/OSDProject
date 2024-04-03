@@ -1,0 +1,19 @@
+<a mat-raised-button color="accent" routerLink="/students/form">
+  <mat-icon matprefix>add</mat-icon>
+  Add New Student
+</a>
+<button mat-raised-button class="back-button" (click)="navigateToHome()">Back to User Profile</button>
+
+
+<ng-container *ngIf="students$ | async as students">
+  <div *ngFor="let student of students">
+    <mat-card (click)="navigateToStudent(student._id)">
+      <mat-card-header>
+        <mat-card-title>{{ student.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <a mat-button color="primary" [routerLink]="['/students', student._id]">View Details</a>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-container>

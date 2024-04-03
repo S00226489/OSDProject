@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Global button styling for all buttons */
+button, a.mat-raised-button {
+    background-color: #000000; /* Black background for buttons */
+    color: white; /* White text for contrast */
+  }
+  
+
+
