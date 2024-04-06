@@ -51,3 +51,20 @@ div[ngIf="showForm"] {
     border-radius: 4px;
   }
   
+
+/* Styles for the "Back" button */
+.action-button {
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline */
+}
+
+.action-button:hover {
+  background-color:#0056b3; 
+}
+

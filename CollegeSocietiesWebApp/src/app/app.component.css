@@ -1,76 +1,99 @@
-/* Global Background */
-body {
-    background-color: #f0f0f0; /* Light grey background */
-  }
-  
-  /* Toolbar Styling */
-  mat-toolbar {
-    background-color: #1976d2; /* Blue color for the toolbar */
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  }
-  
-  /* General Button Styling */
-  button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #000000; /* Black buttons */
-    color: white;
-  }
-  
-  button:hover {
-    background-color: #333333; /* Darker shade for hover state */
-  }
-  
-  /* Specific Button Styling for Raised Buttons */
-  button[mat-raised-button] {
-    background-color: #000000; /* Black color for primary actions */
-    color: white;
-  }
-  
-  button[mat-raised-button]:hover {
-    background-color: #333333;
-  }
-  
-  /* User Details List Styling */
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin: 5px 0;
-    padding: 5px;
-    background-color: #f5f5f5; /* Light grey for list items */
-    border-radius: 4px;
-  }
-  
-  mat-toolbar[color="accent"] {
-    background-color: #ff9800; /* Orange color for user profile toolbar */
-    color: white;
-    padding: 10px 20px;
-  }
-  
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
-  
-  .button-container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    margin: 10px 0;
-  }
-  
-  .button-container button {
-    margin-right: 10px;
-  }
-  
+.spacer {
+  flex: 1;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #ccc; /* Change text color to grey */
+  margin-right: 10px; /* Add spacing between navbar buttons */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #666; /* Change text color on hover to a darker grey */
+}
+
+.navbar-light .navbar-brand {
+  color: #fff; /* Change brand text color to white */
+}
+
+.navbar-light .navbar-brand:hover {
+  color: rgba(255, 255, 255, 0.7); /* Change brand text color on hover */
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1); /* Change toggle button color */
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-color: #fff; /* Change toggle button icon color */
+}
+
+.navbar-light .navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Change toggle button background color on hover */
+}
+
+.bg-lightblue {
+  background-color: #007bff !important; /* Change navbar background color to blue */
+}
+
+.navbar-brand-container {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 32px; /* Increase font size for the title */
+}
+
+.navbar-brand-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-brand-container a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-container {
+  text-align: center; /* Center align the login button */
+}
+
+.footer {
+  text-align: center; /* Center align the footer */
+}
+
+/* Increase image size */
+.user-picture {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* Styles for the navbar buttons */
+.action-button {
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline */
+  margin-right: 10px; /* Add spacing between navbar buttons */
+}
+
+.action-button:last-child {
+  margin-right: 0; /* Remove margin from the last navbar button */
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+
+.container-fluid {
+  display: flex;
+  justify-content: center; /* Center align horizontally */
+}
+
+.navbar-light .navbar-nav {
+  display: flex;
+  justify-content: center; /* Center align horizontally */
+}
+
+

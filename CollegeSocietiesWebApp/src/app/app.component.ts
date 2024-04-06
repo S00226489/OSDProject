@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { AuthService } from '@auth0/auth0-angular';
 import { Router } from '@angular/router';
+import { LogoutOptions } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +12,14 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Part 2';
 
-  
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.auth.user$.subscribe(res => console.log(res));
+    this.auth.user$.subscribe((res: any) => console.log(res));
   }
 
   handleLogOut() {
-    this.auth.logout();
+    this.auth.logout({ returnTo: document.location.origin } as any);
   }
 
   handleLogIn() {
@@ -31,6 +31,13 @@ export class AppComponent {
   navigateToStudents() {
     this.router.navigate(['/students']);
   }
+
+ 
+
+navigateToSocieties(): void {
+  this.router.navigate(['/societies']); // Adjust the route as necessary
+}
+
 
   isHomepage(): boolean {
     return this.router.url === '/';

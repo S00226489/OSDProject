@@ -1,1 +1,6 @@
-<p>list works!</p>
+<ul>
+    <li *ngFor="let society of societies">
+      <a [routerLink]="['/societies', society._id]">{{ society.name }}</a>
+    </li>
+  </ul>
+  

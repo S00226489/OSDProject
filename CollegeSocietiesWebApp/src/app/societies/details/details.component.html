@@ -1,1 +1,7 @@
-<p>details works!</p>
+<div *ngIf="society; else loading">
+    <h2>{{ society?.name }}</h2>
+    <p>{{ society?.description }}</p>
+    <!-- Add more details as needed -->
+  </div>
+  <ng-template #loading>Loading...</ng-template>
+  

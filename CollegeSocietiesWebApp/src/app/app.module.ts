@@ -8,6 +8,8 @@ import { MaterialModule } from './material.module';
 import { StudentsModule } from './students/student.module'; // Include StudentsModule
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from '@auth0/auth0-angular';
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
+import { RouterModule } from '@angular/router'; // Import RouterModule
 import { environment } from './environments/environments';
 
 @NgModule({
@@ -43,6 +45,8 @@ import { environment } from './environments/environments';
         ]
       }
     }),
+    ReactiveFormsModule, // Add ReactiveFormsModule to the imports array
+    RouterModule, // Add RouterModule to the imports array
   ]
 })
 export class AppModule { }
