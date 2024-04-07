@@ -1,18 +1,51 @@
-<!-- form.component.html -->
-
-<form *ngIf="societyForm" [formGroup]="societyForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name" type="text">
-    <div *ngIf="societyForm.get('name')?.invalid && societyForm.get('name')?.touched">
-      <small class="text-danger" *ngIf="societyForm.get('name')?.errors?.['required']">Name is required</small>
+<div class="form-container">
+  <form *ngIf="societyForm" [formGroup]="societyForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text" placeholder="Enter your name">
+      <div *ngIf="societyForm.get('name')?.invalid && societyForm.get('name')?.touched">
+        <small class="text-danger" *ngIf="societyForm.get('name')?.errors?.['required']">Name is required</small>
+      </div>
     </div>
-  </div>
 
-  <div>
-    <label for="description">Description:</label>
-    <textarea id="description" formControlName="description"></textarea>
-  </div>
+    <div>
+      <label for="studentNumber">Student Number:</label>
+      <input id="studentNumber" formControlName="studentNumber" type="text" placeholder="Enter your student number">
+      <!-- Add validation messages if needed -->
+    </div>
 
-  <button type="submit" [disabled]="societyForm.invalid">Submit</button>
-</form>
+    <div>
+      <label for="studentEmail">Student Email:</label>
+      <input id="studentEmail" formControlName="studentEmail" type="email" placeholder="Enter your student email">
+      <!-- Add validation messages if needed -->
+    </div>
+
+    <div>
+      <label for="course">Course:</label>
+      <input id="course" formControlName="course" type="text" placeholder="Enter your course">
+      <!-- Add validation messages if needed -->
+    </div>
+
+    <div>
+      <label for="year">Year:</label>
+      <select id="year" formControlName="year">
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="society">Confirm Society:</label>
+      <select id="society" formControlName="society">
+        <option value="Football">Football</option>
+        <option value="Music">Music</option>
+        <option value="BasketBall">BasketBall</option>
+        <option value="Mature Student">Mature Student</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="societyForm.invalid">Submit</button>
+  </form>
+</div>

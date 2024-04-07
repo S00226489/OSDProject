@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: 'societies/:id', component: DetailsComponent },
   { path: 'societies/form', component: FormComponent },
   { path: 'societies/form/:id', component: FormComponent },
+  { path: 'join-form', component: FormComponent },
+
 ];
 
 @NgModule({

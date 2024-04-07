@@ -1,5 +1,3 @@
-// form.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocietyService } from '../../services/society.service';

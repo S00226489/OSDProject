@@ -14,13 +14,12 @@ import { environment } from './environments/environments';
 import { SocietiesModule } from './societies/societies.module';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component'; // Import NavbarComponent
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent, 
+
     LoginComponent,
   ],
   providers: [],

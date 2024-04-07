@@ -1,10 +1,10 @@
 a[mat-raised-button],
 button.back-button {
-  margin: 10px 10px 10px 0; /* Add spacing between buttons */
-  padding: 10px 20px; /* Adjust padding */
+  margin: 10px 0; /* Adjust margin for mobile */
+  padding: 10px 16px; /* Adjust padding for mobile */
   border-radius: 4px;
-  display: inline-block; /* Display buttons on the same level */
-  align-items: center;
+  display: block; /* Display buttons as block elements for mobile */
+  text-align: center; /* Center-align button text for mobile */
   text-decoration: none;
   vertical-align: middle; /* Align buttons vertically */
 }
@@ -62,8 +62,11 @@ mat-card-content {
 a[mat-button] {
   color: #2196f3;
   text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
+  margin: 10px 0; /* Adjust margin for mobile */
+  padding: 10px 16px; /* Adjust padding for mobile */
+  border-radius: 4px; /* Rounded corners */
+  display: block; /* Display buttons as block elements for mobile */
+  text-align: center; /* Center-align button text for mobile */
 }
 
 a[mat-button]:hover {
@@ -74,10 +77,6 @@ a[mat-button]:hover {
 a[mat-button].view-details-button {
   background-color: #4caf50; /* Green color for the button */
   color: white; /* White text for contrast */
-  padding: 10px 20px; /* Adjust padding */
-  border-radius: 4px; /* Rounded corners */
-  text-decoration: none; /* Remove default underline */
-  margin-right: 10px; /* Add margin to separate from other buttons */
 }
 
 a[mat-button].view-details-button:hover {
@@ -89,9 +88,7 @@ a[mat-button].view-details-button:hover {
   justify-content: flex-end; /* Align button to the right */
 }
 
-
 button.back-button:hover {
   background-color: #0056b3;
 }
-
 

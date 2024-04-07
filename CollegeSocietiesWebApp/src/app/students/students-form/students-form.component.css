@@ -52,3 +52,27 @@ mat-card-content p {
   border: 1px solid #f44336;
   border-radius: 4px;
 }
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 600px) {
+  /* Reduce margin for smaller screens */
+  div[ngIf="showForm"],
+  mat-card {
+    margin: 10px;
+  }
+
+  /* Adjust padding and font size for smaller screens */
+  mat-card-header,
+  mat-card-title,
+  mat-card-subtitle,
+  mat-card-content p {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Adjust button size for smaller screens */
+  .mat-card-content .button-container button,
+  .mat-card-content .button-container a {
+    padding: 8px 12px;
+  }
+}

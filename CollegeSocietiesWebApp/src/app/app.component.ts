@@ -10,13 +10,10 @@ import { LogoutOptions } from '@auth0/auth0-angular';
 })
 export class AppComponent {
   title = 'Part 2';
-  isAdmin: boolean = false; // Initialize isAdmin flag
-
-  // Define the loggedOutContent template variable
-  loggedOutContent: any; // You can replace 'any' with the type of your template variable
+  isAdmin = false; // Initialize isAdmin flag
 
   // Define the user property
-  user: any; // You can replace 'any' with the type of your user object
+  user: any | null = null; // You can replace 'any' with the type of your user object
 
   constructor(public auth: AuthService, private router: Router) {}
 
@@ -41,7 +38,7 @@ export class AppComponent {
     this.router.navigate(['/students']);
   }
 
-  navigateToSocieties(): void {
+  navigateToSocieties() {
     this.router.navigate(['/societies']); // Adjust the route as necessary
   }
 

@@ -1,4 +1,4 @@
-/* Your existing CSS styles remain the same */
+/* Your existing CSS styles */
 
 .spacer {
   flex: 1;
@@ -71,7 +71,7 @@
   background-color: #00ffdd9d;
   border: none;
   border-radius: 4px;
-  padding: 8px 16px;
+  padding: 8px 16px; /* Adjusted padding for smaller buttons */
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
@@ -105,4 +105,53 @@ body {
   margin-right: 10px;
   display: flex;
   align-items: center;
+}
+
+.view-as-container {
+  position: absolute;
+  top: 10px; /* Adjust the top position */
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.view-as-field {
+  font-size: 6px; /* Adjust the font size as needed */
+}
+
+.view-as-select {
+  min-width: 20px; /* Adjust the width as needed */
+}
+
+/* Existing styles for larger screens */
+
+/* Enhanced styles for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust the nav bar to stack items vertically */
+  .navbar {
+    flex-direction: column;
+  }
+
+  /* Adjust the main content to not overlap */
+  .main-content {
+    margin-top: <height_of_navbar>; /* Replace <height_of_navbar> with the actual height */
+    z-index: 1;
+  }
+
+  /* You may need to adjust the height of the navigation bar itself if it's not already set */
+  .navbar {
+    height: auto; /* This allows the navbar to expand as needed for its contents */
+  }
+  
+  /* Ensure navigation buttons do not cover the content */
+  .action-button {
+    width: 100%; /* Full width to prevent overlap */
+    margin-bottom: 5px; /* Add some space between the buttons */
+  }
+
+  /* Adjust the position of the "View as" button */
+  .view-as-container {
+    top: auto; /* Remove the fixed positioning */
+    bottom: 10px; /* Position it at the bottom */
+  }
 }
