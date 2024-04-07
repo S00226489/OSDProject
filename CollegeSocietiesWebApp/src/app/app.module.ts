@@ -1,16 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { StudentsModule } from './students/student.module'; // Include StudentsModule
+import { StudentsModule } from './students/student.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from '@auth0/auth0-angular';
-import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { environment } from './environments/environments';
+import { SocietiesModule } from './societies/societies.module'; // Import SocietiesModule
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,9 @@ import { environment } from './environments/environments';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    StudentsModule, 
+    StudentsModule,
     SharedModule,
+    MatSelectModule, // Import MatSelectModule here
     AuthModule.forRoot({
       ...environment.auth0,
       httpInterceptor: {
@@ -42,11 +45,21 @@ import { environment } from './environments/environments';
             uri: `${environment.apiUri}/students/*`,
             httpMethod: 'DELETE',
           },
+          {
+            uri: `${environment.apiUri}/societies/*`,
+            httpMethod: 'GET', // Adjust the HTTP method as per your API
+          },
+          {
+            uri: `${environment.apiUri}/societies`,
+            httpMethod: 'POST',
+          },
+          // Add other societies endpoints as needed
         ]
       }
     }),
-    ReactiveFormsModule, // Add ReactiveFormsModule to the imports array
-    RouterModule, // Add RouterModule to the imports array
+    ReactiveFormsModule,
+    RouterModule,
+    SocietiesModule // Add SocietiesModule to imports
   ]
 })
 export class AppModule { }

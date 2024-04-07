@@ -13,3 +13,14 @@ button, a.mat-raised-button {
   
 
 
+  .dropdown-container {
+    margin-left: auto; /* Move the dropdown container to the right */
+  }
+  
+  .container-fluid {
+    display: flex;
+    justify-content: center; /* Center align horizontally */
+  }
+  
+  /* Other CSS styles remain unchanged */
+  

@@ -1,6 +1,20 @@
-<ul>
+<div class="society-table">
+  <ul>
     <li *ngFor="let society of societies">
-      <a [routerLink]="['/societies', society._id]">{{ society.name }}</a>
+      <div class="society-item">
+        <img *ngIf="society.name === 'Football Society'" src="assets/footballsociety.jpg" alt="Society Image">
+        <img *ngIf="society.name === 'Music Society'" src="assets/musicsociety.jpg" alt="Society Image">
+        <img *ngIf="society.name === 'Basketball Society'" src="assets/basketballsociety.jpg" alt="Society Image">
+        <img *ngIf="society.name === 'Mature Students Society'" src="assets/maturestudentsociety.jpg" alt="Society Image">
+        <div class="society-details">
+          <div class="society-name">
+            <a [routerLink]="['/societies', society._id]">{{ society.name }}</a>
+          </div>
+          <div class="society-button">
+            <button [routerLink]="['/societies', society._id]">Show Details</button>
+          </div>
+        </div>
+      </div>
     </li>
   </ul>
-  
+</div>

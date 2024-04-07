@@ -13,7 +13,7 @@
 
       <!-- Name Field -->
       <mat-form-field appearance="outline">
-        <mat-label>Student Name</mat-label>
+        <mat-label>Name</mat-label>
         <input matInput placeholder="John Doe" formControlName="name">
         <mat-icon matSuffix>face</mat-icon>
         <mat-error *ngIf="studentForm.hasError('minlength', 'name')">
@@ -25,7 +25,7 @@
       <!-- Student Number Field -->
       <mat-form-field appearance="outline">
         <mat-label>Student Number</mat-label>
-        <input matInput placeholder="SS1234567" formControlName="studentNumber">
+        <input matInput placeholder="S001234567" formControlName="studentNumber">
         <mat-icon matSuffix>school</mat-icon>
         <mat-error>Student Number is required</mat-error>
       </mat-form-field>

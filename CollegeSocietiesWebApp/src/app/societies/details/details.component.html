@@ -1,7 +1,11 @@
-<div *ngIf="society; else loading">
-    <h2>{{ society?.name }}</h2>
-    <p>{{ society?.description }}</p>
-    <!-- Add more details as needed -->
-  </div>
-  <ng-template #loading>Loading...</ng-template>
-  
+<div *ngIf="society; else loading" class="society-details">
+  <h2>{{ society?.name }}</h2>
+  <img [src]="society?.pictureUrl || 'assets/footballsociety.jpg'" alt="Society Image">
+  <p>{{ society?.description }}</p>
+  <!-- Add more details as needed -->
+  <button (click)="goBackToList()">Back to List</button>
+  <button [routerLink]="['/join-form']">Join</button>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

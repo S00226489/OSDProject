@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SocietyService } from '../../services/society.service';
 import { Society } from '../society';
 
@@ -11,7 +11,7 @@ import { Society } from '../society';
 export class DetailsComponent implements OnInit {
   society: Society | null = null;
 
-  constructor(private societyService: SocietyService, private route: ActivatedRoute) {}
+  constructor(private societyService: SocietyService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     const societyId = this.route.snapshot.paramMap.get('id');
@@ -21,5 +21,9 @@ export class DetailsComponent implements OnInit {
         error: (err) => console.error(err)
       });
     }
+  }
+
+  goBackToList(): void {
+    this.router.navigate(['/societies']); // Navigate back to the list component
   }
 }

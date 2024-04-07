@@ -8,7 +8,6 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 <body>
   <div class="container-fluid bg-lightblue py-2">
@@ -19,58 +18,54 @@
 
   <mat-toolbar class="navbar navbar-expand-lg navbar-light bg-lightblue" color="primary">
     <div class="container-fluid">
-      <div class="spacer"></div> <!-- Used to push navigation items to the right -->
+      <div style="margin-left: auto;"> <!-- Move the dropdown container to the right -->
+        <!-- MatSelect for view mode -->
+        <mat-form-field appearance="fill">
+          <mat-label>View as</mat-label>
+          <mat-select [(value)]="isAdmin" (selectionChange)="toggleAdminView()">
+            <mat-option [value]="true">View as Admin</mat-option>
+            <mat-option [value]="false">View as User</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!-- Move other buttons to the left -->
+      <div style="flex: 1;"></div>
       <button mat-button class="action-button" (click)="navigateToHome()">Home</button>
       <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="navigateToStudents()">Student List</button>
       <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="navigateToSocieties()">Societies</button>
       <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="handleLogOut()">Log Out</button>
     </div>
   </mat-toolbar>
-  
 
-  <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOutContent">
-    <ng-container *ngIf="auth.user$ | async as user">
-      <!-- Display User Profile only on Homepage -->
-      <ng-container *ngIf="isHomepage()">
-        <div class="container mt-3">
-          <div class="card">
-            <div class="card-header bg-info text-white">User Profile</div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-3">
-                  <img [src]="user.picture" class="img-fluid rounded-circle user-picture" alt="User Picture">
-                </div>
-                <div class="col-md-9">
-                  <ul class="list-unstyled">
-                    <li><strong>Name:</strong> {{ user.name }}</li>
-                    <li><strong>Email:</strong> {{ user.email }}</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+  <div class="container mt-3" *ngIf="auth.isAuthenticated$ | async; else loggedOutContent">
+    <div class="card">
+      <div class="card-header bg-info text-white">User Profile</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <img [src]="user.picture" class="img-fluid rounded-circle user-picture" alt="User Picture">
+          </div>
+          <div class="col-md-9">
+            <ul class="list-unstyled">
+              <li><strong>Name:</strong> {{ user.name }}</li>
+              <li><strong>Email:</strong> {{ user.email }}</li>
+            </ul>
           </div>
         </div>
-      </ng-container>
-    </ng-container>
-  </ng-container>
-
-  <ng-template #loggedOutContent>
-    <div class="container mt-3">
-      <div class="login-container">
-        <div class="text-center mb-3">
-          <img src="assets/collegesocieties.jpg" alt="Image" class="img-fluid user-picture">
-        </div>
-        <button class="btn btn-primary" (click)="handleLogIn()">Log in</button>
       </div>
     </div>
-  </ng-template>
+  </div>
+
+  <div class="container mt-3" *ngIf="auth.isAuthenticated$ | async; else loggedOutContent">
+    <div class="login-container">
+      <div class="text-center mb-3">
+        <img src="assets/collegesocieties.jpg" alt="Image" class="img-fluid user-picture">
+      </div>
+      <button class="btn btn-primary" (click)="handleLogIn()">Log in</button>
+    </div>
+  </div>
 
   <router-outlet></router-outlet>
 
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      <span class="text-muted">&copy; 2024 ATU Sligo Societies. All rights reserved.</span>
-    </div>
-  </footer>
 </body>
 </html>
