@@ -1,45 +1,47 @@
+/* Your existing CSS styles remain the same */
+
 .spacer {
   flex: 1;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #ccc; /* Change text color to grey */
-  margin-right: 10px; /* Add spacing between navbar buttons */
+  color: #ccc;
+  margin-right: 10px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #666; /* Change text color on hover to a darker grey */
+  color: #666;
 }
 
 .navbar-light .navbar-brand {
-  color: #fff; /* Change brand text color to white */
+  color: #fff;
 }
 
 .navbar-light .navbar-brand:hover {
-  color: rgba(255, 255, 255, 0.7); /* Change brand text color on hover */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar-light .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1); /* Change toggle button color */
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-color: #fff; /* Change toggle button icon color */
+  background-color: #fff;
 }
 
 .navbar-light .navbar-toggler:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Change toggle button background color on hover */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .bg-lightblue {
-  background-color: #007bff !important; /* Change navbar background color to blue */
+  background-color: #007bff !important;
 }
 
 .navbar-brand-container {
   text-align: center;
   padding: 20px 0;
-  font-size: 50px; /* Increase font size for the title */
-  font-weight: bold; /* Make the title bold */
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .navbar-brand-container a {
@@ -52,20 +54,18 @@
 }
 
 .login-container {
-  text-align: center; /* Center align the login button */
+  text-align: center;
 }
 
 .footer {
-  text-align: center; /* Center align the footer */
+  text-align: center;
 }
 
-/* Increase image size */
 .user-picture {
   max-width: 300px;
   max-height: 300px;
 }
 
-/* Styles for the navbar buttons */
 .action-button {
   color: #fff;
   background-color: #00ffdd9d;
@@ -74,8 +74,8 @@
   padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  text-decoration: none; /* Remove underline */
-  margin-right: 10px; /* Add spacing between navbar buttons */
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 .action-button:hover {
@@ -84,27 +84,25 @@
 
 .container-fluid {
   display: flex;
-  justify-content: center; /* Center align horizontally */
+  justify-content: center;
 }
 
 .navbar-light .navbar-nav {
   display: flex;
-  justify-content: center; /* Center align horizontally */
-  width: 100%; /* Ensure full width */
+  justify-content: center;
+  width: 100%;
 }
 
-/* Remove margin from the last navbar button */
 .action-button:last-child {
   margin-right: 0;
 }
 
 body {
-  background-color: #cce6ff; /* Lighter shade of blue */
+  background-color: #cce6ff;
 }
 
 .dropdown-container {
-  margin-right: 10px; /* Add margin to separate it from other buttons */
+  margin-right: 10px;
   display: flex;
-  align-items: center; /* Vertically center the dropdown */
+  align-items: center;
 }
-

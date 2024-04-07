@@ -4,21 +4,19 @@ import { StudentsListComponent } from './students/students-list/students-list.co
 import { StudentsDetailsComponent } from './students/students-details/students-details.component';
 import { StudentsFormComponent } from './students/students-form/students-form.component';
 import { ListComponent } from './societies/list/list.component';
-import { DetailsComponent } from './societies/details/details.component'; // Adjust the path as needed
-import { FormComponent } from './societies/form/form.component'; // Adjust the path as needed
+import { DetailsComponent } from './societies/details/details.component'; 
+import { FormComponent } from './societies/form/form.component'; 
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'students', component: StudentsListComponent },
   { path: 'students/form', component: StudentsFormComponent },
   { path: 'students/form/:id', component: StudentsFormComponent }, 
   { path: 'students/:id', component: StudentsDetailsComponent },
-  // Existing Societies List Component
   { path: 'societies', component: ListComponent },
-  // Add route for SocietyDetailsComponent
   { path: 'societies/:id', component: DetailsComponent },
-  // Add route for SocietyFormComponent for adding a new society
   { path: 'societies/form', component: FormComponent },
-  // Add route for SocietyFormComponent for editing an existing society
   { path: 'societies/form/:id', component: FormComponent },
 ];
 

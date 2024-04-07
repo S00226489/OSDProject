@@ -11,12 +11,17 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { environment } from './environments/environments';
-import { SocietiesModule } from './societies/societies.module'; // Import SocietiesModule
+import { SocietiesModule } from './societies/societies.module';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component'; // Import NavbarComponent
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent, 
+    LoginComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -28,7 +33,8 @@ import { MatSelectModule } from '@angular/material/select';
     MaterialModule,
     StudentsModule,
     SharedModule,
-    MatSelectModule, // Import MatSelectModule here
+    FormsModule,
+    MatSelectModule,
     AuthModule.forRoot({
       ...environment.auth0,
       httpInterceptor: {
