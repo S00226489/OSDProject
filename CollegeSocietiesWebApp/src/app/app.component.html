@@ -16,7 +16,7 @@
         <mat-label>View as</mat-label>
         <mat-select [(value)]="isAdmin" (selectionChange)="toggleAdminView()" class="view-as-select">
           <mat-option [value]="true">Admin</mat-option>
-          <mat-option [value]="false">User</mat-option>
+          <mat-option [value]="false">Student</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -27,7 +27,8 @@
 
   <mat-toolbar class="navbar navbar-expand-lg navbar-light bg-lightblue" color="primary">
     <div class="container-fluid">
-      <button mat-button class="action-button" (click)="navigateToHome()">Home</button>
+      
+      <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="navigateToHome()">Home</button>
       <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="navigateToStudents()">Students</button>
       <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="navigateToSocieties()">Societies</button>
       <button mat-button *ngIf="auth.isAuthenticated$ | async" class="action-button" (click)="handleLogOut()">Log Out</button>

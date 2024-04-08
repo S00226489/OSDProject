@@ -1,24 +1,23 @@
 <div class="container mt-3">
-    <!-- Check if the user is authenticated -->
-    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOutContent">
-      <!-- Display User Profile only on Homepage -->
-      <div *ngIf="auth.user$ | async as user" class="profile-container">
-        <h2>User Profile</h2>
-        <div class="profile-info">
-          <img [src]="user.picture" alt="User Picture" class="profile-picture">
-          <div class="profile-details">
-            <p><strong>Name:</strong> {{ user.name }}</p>
-            <p><strong>Email:</strong> {{ user.email }}</p>
-          </div>
+  <!-- Check if the user is authenticated -->
+  <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOutContent">
+    <!-- Display User Profile only on Homepage -->
+    <div *ngIf="auth.user$ | async as user" class="profile-container">
+      <h2>User Profile</h2>
+      <div class="profile-info">
+        <img [src]="user.picture" alt="User Picture" class="profile-picture">
+        <div class="profile-details">
+          <p><strong>Name:</strong> {{ user.name }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
         </div>
       </div>
-    </ng-container>
-    <!-- Display the login component only if the user is not authenticated and on the homepage -->
-    <ng-template #loggedOutContent>
-      <div class="login-container" *ngIf="isHomepage()">
-        <img src="assets/collegesocieties.jpg" alt="Image" class="img-fluid user-picture">
-        <button (click)="auth.loginWithRedirect()">Log in</button>
-      </div>
-    </ng-template>
-  </div>
-  
+    </div>
+  </ng-container>
+  <!-- Display the login component only if the user is not authenticated and on the homepage -->
+  <ng-template #loggedOutContent>
+    <div class="login-container" *ngIf="isHomepage()">
+      <img src="assets/collegesocieties.jpg" alt="Image" class="img-fluid user-picture">
+      <button (click)="auth.loginWithRedirect()">Log in</button>
+    </div>
+  </ng-template>
+</div>
