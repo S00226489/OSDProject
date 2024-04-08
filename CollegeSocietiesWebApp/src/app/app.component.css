@@ -134,7 +134,7 @@ body {
 
   /* Adjust the main content to not overlap */
   .main-content {
-    margin-top: <height_of_navbar>; /* Replace <height_of_navbar> with the actual height */
+  
     z-index: 1;
   }
 
@@ -154,4 +154,17 @@ body {
     top: auto; /* Remove the fixed positioning */
     bottom: 10px; /* Position it at the bottom */
   }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #cce6ff;
+  padding: 20px 0;
+  text-align: center;
 }
